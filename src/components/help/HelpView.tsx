@@ -11,6 +11,8 @@ import {
   Receipt
 } from 'lucide-react';
 import { Card } from '../ui/Card';
+import { Button } from '../ui/Button';
+import { useTutorial } from '../../hooks/useTutorial';
 
 interface TutorialStep {
   id: string;
@@ -84,6 +86,7 @@ const tutorials: TutorialStep[] = [
 
 export const HelpView: React.FC = () => {
   const [expandedTutorial, setExpandedTutorial] = useState<string | null>(null);
+  const { resetTutorial } = useTutorial();
 
   const toggleTutorial = (id: string) => {
     setExpandedTutorial(expandedTutorial === id ? null : id);
@@ -98,9 +101,19 @@ export const HelpView: React.FC = () => {
             <HelpCircle className="w-8 h-8" />
           </div>
           <h2 className="text-2xl font-bold mb-2">Centro de Ayuda</h2>
-          <p className="text-primary-200">
+          <p className="text-primary-100">
             Aprende a usar todas las funciones de FeriaValle - tu herramienta gratuita de control de ventas
           </p>
+          <div className="mt-4">
+            <Button
+              variant="secondary"
+              size="sm"
+              onClick={resetTutorial}
+              className="bg-white/20 hover:bg-white/30 text-white border-white/30"
+            >
+              🎯 Ver Tutorial Interactivo
+            </Button>
+          </div>
         </div>
       </Card>
 
@@ -151,8 +164,6 @@ export const HelpView: React.FC = () => {
                 <button
                   onClick={() => toggleTutorial(tutorial.id)}
                   className="w-full p-4 text-left hover:bg-gray-50 transition-colors"
-                  aria-expanded={isExpanded}
-                  aria-controls={`tutorial-steps-${tutorial.id}`}
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-3">

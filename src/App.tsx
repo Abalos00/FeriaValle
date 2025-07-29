@@ -7,9 +7,12 @@ import { ReportesPage } from './pages/ReportesPage';
 import { AyudaPage } from './pages/AyudaPage';
 import { useStore } from './store/useStore';
 import { useOffline } from './hooks/useOffline';
+import { useTutorial } from './hooks/useTutorial';
+import { TutorialOverlay } from './components/tutorial/TutorialOverlay';
 
 function App() {
   const { currentView, showWelcome, setShowWelcome } = useStore();
+  const { showTutorial, completeTutorial, skipTutorial } = useTutorial();
   
   // Initialize offline detection
   useOffline();
@@ -43,6 +46,11 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {showWelcome && <WelcomeAnimation onComplete={handleWelcomeComplete} />}
+      <TutorialOverlay 
+        isActive={showTutorial}
+        onComplete={completeTutorial}
+        onSkip={skipTutorial}
+      />
       <Navbar />
       <main className="animate-fade-in">
         {renderCurrentView()}
