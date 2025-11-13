@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, ArrowRight, ArrowLeft, Lightbulb } from 'lucide-react';
+import { X, ArrowRight, ArrowLeft, Lightbulb, ShieldCheck } from 'lucide-react';
 import { Button } from '../ui/Button';
 
 interface TutorialStep {
@@ -51,9 +51,17 @@ const tutorialSteps: TutorialStep[] = [
   {
     id: 'offline',
     title: 'Funciona Sin Internet',
-    description: 'FeriaValle funciona completamente offline. Tus datos se guardan localmente y de forma segura.',
+    description: 'Usa el indicador superior para confirmar tu estado de conexión y continúa trabajando sin internet.',
     targetSelector: '[data-tutorial="status"]',
     position: 'left',
+  },
+  {
+    id: 'backup',
+    title: 'Respaldos Locales',
+    description: 'Genera copias de seguridad y restaura tus datos desde la barra de estado.',
+    targetSelector: '[data-tutorial="backup-controls"]',
+    position: 'bottom',
+    icon: ShieldCheck,
   },
 ];
 

@@ -21,25 +21,25 @@ export const SalesList: React.FC = () => {
   return (
     <div className="space-y-6">
       {/* Today's Summary */}
-      <Card>
+      <Card className="bg-white">
         <h3 className="text-lg font-semibold text-gray-900 mb-4">Resumen del Día</h3>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div className="text-center">
-            <div className="flex items-center justify-center w-12 h-12 bg-primary-100 rounded-lg mx-auto mb-2">
+          <div className="text-center rounded-2xl bg-primary-50/80 p-4">
+            <div className="flex items-center justify-center w-12 h-12 bg-white rounded-xl mx-auto mb-2 shadow-inner">
               <Clock className="h-6 w-6 text-primary-600" />
             </div>
             <p className="text-2xl font-bold text-gray-900">{todaySales.length}</p>
             <p className="text-sm text-gray-600">Ventas</p>
           </div>
-          <div className="text-center">
-            <div className="flex items-center justify-center w-12 h-12 bg-success-100 rounded-lg mx-auto mb-2">
+          <div className="text-center rounded-2xl bg-success-50/80 p-4">
+            <div className="flex items-center justify-center w-12 h-12 bg-white rounded-xl mx-auto mb-2 shadow-inner">
               <DollarSign className="h-6 w-6 text-success-600" />
             </div>
             <p className="text-2xl font-bold text-gray-900">{formatCurrency(totalToday)}</p>
             <p className="text-sm text-gray-600">Ingresos</p>
           </div>
-          <div className="text-center">
-            <div className="flex items-center justify-center w-12 h-12 bg-warning-100 rounded-lg mx-auto mb-2">
+          <div className="text-center rounded-2xl bg-warning-50/80 p-4">
+            <div className="flex items-center justify-center w-12 h-12 bg-white rounded-xl mx-auto mb-2 shadow-inner">
               <DollarSign className="h-6 w-6 text-warning-600" />
             </div>
             <p className="text-2xl font-bold text-gray-900">{formatCurrency(profitToday)}</p>
@@ -53,16 +53,16 @@ export const SalesList: React.FC = () => {
         <h3 className="text-lg font-semibold text-gray-900 mb-4">Ventas de Hoy</h3>
         
         {todaySales.length === 0 ? (
-          <div className="text-center py-8 text-gray-500">
-            <p>No hay ventas registradas hoy</p>
-            <p className="text-sm">¡Registra tu primera venta arriba!</p>
+          <div className="text-center py-10 text-gray-500">
+            <p className="font-medium">No hay ventas registradas hoy</p>
+            <p className="text-sm">Registra tu primera venta arriba</p>
           </div>
         ) : (
           <div className="space-y-3">
             {todaySales.map((sale) => (
               <div
                 key={sale.id}
-                className="flex items-center justify-between p-4 bg-gray-50 rounded-lg"
+                className="flex items-center justify-between p-4 rounded-2xl bg-white/80 border border-white shadow-sm"
               >
                 <div className="flex-1">
                   <div className="flex items-center justify-between mb-1">

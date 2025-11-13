@@ -18,7 +18,7 @@ export const Card: React.FC<CardProps> = ({
   };
 
   const classes = [
-    'bg-white rounded-lg shadow-md border border-gray-200 transition-all duration-200 hover:shadow-lg',
+    'bg-gradient-to-br from-white/95 to-white/75 backdrop-blur-2xl border border-white/60 rounded-[28px] shadow-[0_35px_70px_rgba(15,23,42,0.08)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_45px_90px_rgba(15,23,42,0.15)]',
     paddingClasses[padding],
     className
   ].join(' ');

@@ -112,7 +112,7 @@ export const SaleForm: React.FC = () => {
         />
 
         {selectedProduct && (
-          <div className="bg-gray-50 rounded-lg p-4 space-y-2">
+          <div className="rounded-2xl p-4 space-y-3 bg-gradient-to-r from-primary-50 to-white border border-primary-100">
             <div className="flex justify-between text-sm">
               <span>Precio unitario:</span>
               <span className="font-medium">{formatCurrency(selectedProduct.price)}</span>

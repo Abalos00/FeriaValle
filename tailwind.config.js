@@ -3,6 +3,17 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
+      },
+      backgroundImage: {
+        'aurora': 'radial-gradient(circle at 20% 20%, rgba(59,130,246,0.25), transparent 45%), radial-gradient(circle at 80% 0%, rgba(14,165,233,0.3), transparent 35%), radial-gradient(circle at 50% 80%, rgba(129,140,248,0.35), transparent 30%)',
+      },
+      boxShadow: {
+        'glass': '0 20px 45px rgba(15,23,42,0.15)',
+        'button': '0 12px 30px rgba(59,130,246,0.35)',
+      },
       colors: {
         primary: {
           50: '#eff6ff',

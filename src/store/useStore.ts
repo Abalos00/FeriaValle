@@ -21,6 +21,9 @@ interface StoreActions {
   
   // Offline status
   setOfflineStatus: (isOffline: boolean) => void;
+
+  // Data management
+  importData: (data: { products: Product[]; sales: Sale[] }) => void;
   
   // Utils
   getProductById: (id: string) => Product | undefined;
@@ -105,6 +108,19 @@ export const useStore = create<AppState & StoreActions>()(
 
       // Offline status
       setOfflineStatus: (isOffline) => set({ isOffline }),
+
+      // Data management
+      importData: (data) => set(() => ({
+        products: data.products.map(product => ({
+          ...product,
+          createdAt: new Date(product.createdAt),
+          updatedAt: new Date(product.updatedAt),
+        })),
+        sales: data.sales.map(sale => ({
+          ...sale,
+          date: new Date(sale.date),
+        })),
+      })),
 
       // Utils
       getProductById: (id) => {
