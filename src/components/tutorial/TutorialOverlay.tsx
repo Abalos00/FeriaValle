@@ -79,6 +79,7 @@ export const TutorialOverlay: React.FC<TutorialOverlayProps> = ({
   const [currentStep, setCurrentStep] = useState(0);
   const [targetElement, setTargetElement] = useState<HTMLElement | null>(null);
   const [tooltipPosition, setTooltipPosition] = useState({ top: 0, left: 0 });
+  const [highlightRect, setHighlightRect] = useState({ top: 0, left: 0, width: 0, height: 0 });
 
   useEffect(() => {
     if (!isActive) return;
@@ -118,6 +119,12 @@ export const TutorialOverlay: React.FC<TutorialOverlayProps> = ({
         }
         
         setTooltipPosition({ top, left });
+        setHighlightRect({
+          top: rect.top + scrollTop,
+          left: rect.left + scrollLeft,
+          width: rect.width,
+          height: rect.height,
+        });
       }
     };
 
@@ -164,12 +171,12 @@ export const TutorialOverlay: React.FC<TutorialOverlayProps> = ({
       <div
         className="fixed z-50 pointer-events-none"
         style={{
-          top: targetElement.offsetTop - 4,
-          left: targetElement.offsetLeft - 4,
-          width: targetElement.offsetWidth + 8,
-          height: targetElement.offsetHeight + 8,
+          top: highlightRect.top - 4,
+          left: highlightRect.left - 4,
+          width: highlightRect.width + 8,
+          height: highlightRect.height + 8,
           border: '3px solid #3B82F6',
-          borderRadius: '8px',
+          borderRadius: '12px',
           boxShadow: '0 0 0 4px rgba(59, 130, 246, 0.3)',
           animation: 'pulse 2s infinite',
         }}
