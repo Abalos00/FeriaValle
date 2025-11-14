@@ -76,4 +76,4 @@ docs/
    - Si agregas nuevas vistas/componentes, documenta su comportamiento.
 3. Para propuestas grandes (nuevos módulos, integraciones externas), crea primero un issue describiendo el caso de uso.
 
-**Contacto:** Si tienes dudas sobre diseño o roadmap, abre un issue o escribe a soporte@feriavalle.cl. Estamos construyendo este panel pensando en feriantes que necesitan herramientas gratuitas, robustas y disponibles aun sin conexión. ¡Toda ayuda es bienvenida! ❤️
+**Contacto:** Si tienes dudas sobre diseño o roadmap, abre un issue o escribe a g.abalos.v@gmail.com. Estamos construyendo este panel pensando en feriantes que necesitan herramientas gratuitas, robustas y disponibles aun sin conexión. ¡Toda ayuda es bienvenida! ❤️

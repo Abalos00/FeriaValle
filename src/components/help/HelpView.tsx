@@ -335,7 +335,7 @@ export const HelpView: React.FC = () => {
           <div className="space-y-2">
             <p className="text-sm text-gray-500">Reporta errores o solicita ayuda:</p>
             <a 
-              href="mailto:g.abalos.v@gmail.com?subject=Soporte%20-%20FeriaValle&body=Describe%20tu%20problema%20o%20consulta%20aquÃ­..."
+              href="mailto:g.abalos.v@gmail.com?subject=Soporte%20-%20FeriaValle&body=Describe%20tu%20problema%20o%20consulta%20aquí­..."
               className="inline-flex items-center space-x-2 text-primary-600 hover:text-primary-700 font-medium"
             >
               <Mail className="w-4 h-4" />
