@@ -198,7 +198,7 @@ export const HelpView: React.FC = () => {
       <Card>
         <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
           <PlayCircle className="w-5 h-5 mr-2 text-primary-600" />
-          Consejos RÃ¡pidos
+          Consejos Rápidos
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="p-4 bg-success-50 rounded-lg border border-success-200">
